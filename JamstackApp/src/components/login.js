@@ -1,10 +1,10 @@
 // import React, { useState } from "react"
 import React from "react"
 import { navigate } from "gatsby"
-import { handleLogin, isLoggedIn } from "../utils/auth"
+import { handleLogin, isLoggedIn, isBrowser } from "../utils/auth"
 
 const Login = () => {
-    if (isLoggedIn()) {
+    if (isBrowser() && isLoggedIn()) {
       navigate(`/app/profile`)
       return null
     }
